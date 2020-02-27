@@ -6,8 +6,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="">
 </head>
 <body>
-    <p>uwu</p>
+    <div class="contain">
+        <div class="row">
+            <div class="col-5">
+                
+            </div>
+            <div class="col-5">
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>

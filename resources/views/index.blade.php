@@ -1,141 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>RedNeeko</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
-    <link rel="stylesheet" href="{{url('css/index.css')}}">
-</head>
-<body style="background-image: url('../img/fondo.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-    ">
-<nav class="navbar navbar-light bg-dark" style="position: fixed; top: 0; width: 100%; z-index: 1">
-  <a class="navbar-brand" id="txtlogo">
-    <span><img src="{{url('img/logo.png')}}" id="logo"></span>RedNeeko
-  </a>
-</nav>
+@extends('template.template')
+
+@section('contenido')
     <div class="container">
         <div class="row">
-           <div class="col-8" id="posteos">
-               <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
+           <div class="col-8" id="posteos" >
+               @foreach($posts as $p)
                 <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
+                  <div class="card-header text-center">
+                    {{$p->titulo}}
                   </div>
-                  <div class="card-body">
+                  <div class="card-body text_container" >
                     <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
+                      <p>{{$p->contenido}}</p>
+                      <footer class="blockquote-footer"><cite title="Source Title">{{$p->usuario}}</cite></footer>
                     </blockquote>
                   </div>
-                </div>
-                <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
-                    </blockquote>
+                  <div class="card-footer text-muted">
+                    <a href="" class="btn btn-danger"><i class="fas fa-heart"></i> 59 </a> <a href="" class="btn btn-secondary"><i class="fas fa-heart-broken"></i> 5  </a> <a href="" class="btn btn-light"><i class="fas fa-comment-dots"></i> Comentario(s)</a>
                   </div>
                 </div>
-                <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
-                <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
-                <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
-                <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
-                <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
-                <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
-                <div class="card" id="post">
-                  <div class="card-header">
-                    Titulo
-                  </div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>Pus el contenido del post no?xd</p>
-                      <footer class="blockquote-footer"><cite title="Source Title">Usuario</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
+               @endforeach
            </div>
            <div class="col-3" id="tendencias">
            </div>
         </div>
     </div>
-</body>
-</html>
+@endsection

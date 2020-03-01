@@ -1,7 +1,7 @@
 #posteos{
 	width: 100px;
 	height: 300px;
-	margin-top: 8%;
+	margin-top: 1%;
 }
 
 #tendencias{
@@ -24,4 +24,9 @@
 
 #post{
 	margin-top: 2%;
+}
+
+#bar{
+	margin-top: 8%;
+	background: rgba(247,247,247,1);
 }

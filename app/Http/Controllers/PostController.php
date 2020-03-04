@@ -13,4 +13,8 @@ class PostController extends Controller
     	return view('index')
     	->with("posts",$posts);
     }
+
+    public function nuevopost(){
+    	return view('formulario');
+    }
 }

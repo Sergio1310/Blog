@@ -23,7 +23,7 @@
                 <input type="text" class="form-control" id="" placeholder="">
               </div>
               <div class="input-group col-3">
-                <a href="" class="btn btn-success btn-block">Agregar</a>
+                <a href="/newpost" class="btn btn-success btn-block">Agregar</a>
               </div>
             </div>
             <br>
@@ -34,9 +34,13 @@
                   <div class="card-header text-center">
                     {{$p->titulo}} 
                   </div>
-                  <div class="card-body text_container" >
+                  <div class="card-body text_container" style="color: black;">
                     <blockquote class="blockquote mb-0">
-                      <p>{{$p->contenido}}</p>
+                      @if($p->contenido == null)
+                      <p>{{substr($p->contenido, 0,100)}}</p>
+                      @else
+                      <p>{{substr($p->contenido, 0,100)}}...<a href=""> Ver mas</a></p>
+                      @endif
                       <footer class="blockquote-footer"><cite title="Source Title">{{$p->usuario}}</cite></footer>
                       <br>
                       <input type="hidden" value="{{$p->id}}">
@@ -44,7 +48,7 @@
                       <a href="" class="btn btn-secondary"><i class="fas fa-heart-broken"></i> {{$p->ndislike}}  </a>
                       <a href="" class="btn btn-light"><i class="fas fa-comment-dots"></i> Comentario(s)</a>
                       @if($p->status == 1)
-                      <a href="" class="btn btn-danger"><i class="far fa-window-close"> Dar de baja post</i></a>
+                      <a href="" class="btn btn-danger "><i class="far fa-window-close"> Dar de baja post</i></a>
                       @else
                       <a href="" class="btn btn-success"><i class="fas fa-upload"></i> Resubir post</a>
                       @endif

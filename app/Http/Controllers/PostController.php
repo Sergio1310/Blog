@@ -9,7 +9,7 @@ use App\Posts;
 class PostController extends Controller
 {
     public function index(){
-    	$posts = posts::getPost();
+    	$posts = Posts::getPost();
     	return view('index')
     	->with("posts",$posts);
     }

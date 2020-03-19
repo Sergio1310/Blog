@@ -41,6 +41,10 @@
                       @else
                       <p>{{substr($p->contenido, 0,100)}}...<a href=""> Ver mas</a></p>
                       @endif
+                      <img src="{{$p->imagen}}" style="width: 685px; height: 400px;">
+                      <br>
+                      <br>
+                      <iframe width="685" height="400" src="https://www.youtube.com/embed/{{$p->videoWeb}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       <footer class="blockquote-footer"><cite title="Source Title">{{$p->usuario}}</cite></footer>
                       <br>
                       <input type="hidden" value="{{$p->id}}">

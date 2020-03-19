@@ -10,12 +10,17 @@ use DB;
 class ApiController extends Controller
 {
     public function getPost(){
-        $post = ApiModel::getPosts();
-    	return  $post;
+        $posts = ApiModel::getPosts();
+    	return  response()->json(['posts' => $posts]);
     }
 
     public function getPostId($id){
         $post = ApiModel::getPostById($id);
-    	return  $post;
+    	return  response($post);
+    }
+
+    public function usuarios(){
+        $Usuario = ApiModel::getUsuario();
+        return response()->json(['usuario' => $Usuario]);
     }
 }

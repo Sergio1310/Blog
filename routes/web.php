@@ -13,3 +13,5 @@
 
 Route::get('/', 'PostController@index');
 Route::get('/newpost','PostController@nuevopost');
+Route::get('cambiarStatus', 'PostController@cambiarstatus')->name('cambiar.status');
+Route::get('cambiarStatus2', 'PostController@cambiarstatus2')->name('cambiar.status2');

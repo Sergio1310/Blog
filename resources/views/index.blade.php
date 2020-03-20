@@ -55,9 +55,9 @@
                       <a href="" class="btn btn-secondary"><i class="fas fa-heart-broken"></i> {{ $p->ndislike }}  </a>
                       <a href="" class="btn btn-light"><i class="fas fa-comment-dots"></i> Comentario(s)</a>
                       @if($p->status == 1)
-                      <a href="" class="btn btn-danger "><i class="far fa-window-close"> Dar de baja post</i></a>
+                      <button type="button" id="botonCambiar" class="btn btn-danger " value="{{$p->id}}"><i class="far fa-window-close"> Dar de baja post</i></button>
                       @else
-                      <a href="" class="btn btn-success"><i class="fas fa-upload"></i> Resubir post</a>
+                      <button type="button" id="botonCambiar2" class="btn btn-success " value="{{$p->id}}"><i class="fas fa-upload"></i> Resubir post</button>
                       @endif
                     </blockquote>
                   </div>
@@ -66,4 +66,32 @@
            </div>
         </div>
     </div>
+<script>
+  $('#botonCambiar').on('click', function(){
+      var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+      var route = "{{route('cambiar.status')}}";
+      var id = $('#botonCambiar').val();
+      $.ajax({
+        url: route,
+          type:     'get',
+          data:      {_token: CSRF_TOKEN, id: id},
+          success:function(data){
+            location.reload();
+          }
+      });
+  });
+  $('#botonCambiar2').on('click', function(){
+      var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+      var route = "{{route('cambiar.status2')}}";
+      var id = $('#botonCambiar2').val();
+      $.ajax({
+        url: route,
+          type:     'get',
+          data:      {_token: CSRF_TOKEN, id: id},
+          success:function(data){
+            location.reload();
+          }
+      });
+  });
+ </script>
 @endsection

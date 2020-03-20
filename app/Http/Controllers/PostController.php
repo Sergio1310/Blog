@@ -17,4 +17,13 @@ class PostController extends Controller
     public function nuevopost(){
     	return view('formulario');
     }
+
+    public function cambiarstatus(Request $request){
+    	$id = $request->input('id');
+    	$update = Posts::updateStatus($id);
+    }
+    public function cambiarstatus2(Request $request){
+    	$id = $request->input('id');
+    	$update = Posts::updateStatus2($id);
+    }
 }

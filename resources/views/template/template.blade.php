@@ -10,6 +10,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/5a6a0f2989.js" crossorigin="anonymous"></script>
     <script src="{{url('js/readmore.js')}}"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 <body style="background-image: url('../img/fondo.png');
     background-repeat: no-repeat;

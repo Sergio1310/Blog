@@ -29,4 +29,12 @@ class PostController extends Controller
 	    	$insertar = Posts::GenerarPost($id,$usuario,$titulo,$vmovil,$vweb,$imagen,$contenido);
     	return redirect('/');
     }
+    public function cambiarstatus(Request $request){
+    	$id = $request->input('id');
+    	$update = Posts::updateStatus($id);
+    }
+    public function cambiarstatus2(Request $request){
+    	$id = $request->input('id');
+    	$update = Posts::updateStatus2($id);
+    }
 }

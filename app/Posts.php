@@ -13,7 +13,6 @@ class posts extends Model
     	->select('p.id','p.titulo','p.usuario','p.videoWeb','p.imagen','p.contenido','l.nlike','l.ndislike','p.status')
     	->get();
     }
-
     public static function GenerarPost($id,$usuario,$titulo,$vmovil,$vweb,$imagen,$contenido){
     	DB::table('post')->insert([
     	'id' => $id,
@@ -31,5 +30,15 @@ class posts extends Model
     	 'nlike' => 0,
     	 'ndislike' => 0
 		]);
+	}
+    public static function updateStatus($id){
+    	return DB::table('post AS p')
+    	->where('id', $id)
+    	->update(['status' => 0]);
+    }
+    public static function updateStatus2($id){
+    	return DB::table('post AS p')
+    	->where('id', $id)
+    	->update(['status' => 1]);
     }
 }

@@ -44,12 +44,15 @@
                       <img src="{{$p->imagen}}" style="width: 685px; height: 400px;">
                       <br>
                       <br>
+                      @if($p->videoWeb == null)
+                      @else
                       <iframe width="685" height="400" src="https://www.youtube.com/embed/{{$p->videoWeb}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      @endif
                       <footer class="blockquote-footer"><cite title="Source Title">{{$p->usuario}}</cite></footer>
                       <br>
                       <input type="hidden" value="{{$p->id}}">
-                      <a href="" class="btn btn-danger"><i class="fas fa-heart"></i> {{$p->nlike}} </a> 
-                      <a href="" class="btn btn-secondary"><i class="fas fa-heart-broken"></i> {{$p->ndislike}}  </a>
+                      <a href="" class="btn btn-danger"><i class="fas fa-heart"></i> {{ $p->nlike }} </a> 
+                      <a href="" class="btn btn-secondary"><i class="fas fa-heart-broken"></i> {{ $p->ndislike }}  </a>
                       <a href="" class="btn btn-light"><i class="fas fa-comment-dots"></i> Comentario(s)</a>
                       @if($p->status == 1)
                       <a href="" class="btn btn-danger "><i class="far fa-window-close"> Dar de baja post</i></a>

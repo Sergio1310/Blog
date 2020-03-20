@@ -17,4 +17,16 @@ class PostController extends Controller
     public function nuevopost(){
     	return view('formulario');
     }
+
+    public function newPost(Request $request){
+            $id = date('his');
+	    	$titulo = $request->input('titulo');
+            $usuario = $request->input('usuario');
+	    	$vmovil = $request->input('vmovil');
+            $vweb = $request->input('vweb');
+	    	$imagen = $request->input('imagen');
+	    	$contenido = $request->input('contenido');
+	    	$insertar = Posts::GenerarPost($id,$usuario,$titulo,$vmovil,$vweb,$imagen,$contenido);
+    	return redirect('/');
+    }
 }
